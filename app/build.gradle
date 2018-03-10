@@ -35,13 +35,13 @@ ext {
         implementation "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
 
         implementation "com.jakewharton:butterknife:$butterKnifeVersion"
-        implementation "com.jakewharton:butterknife-compiler:$butterKnifeVersion"
+        annotationProcessor "com.jakewharton:butterknife-compiler:$butterKnifeVersion"
 
         implementation "com.google.dagger:dagger:$daggerVersion"
-        implementation "com.google.dagger:dagger-compiler:$daggerVersion"
+        annotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
 
         implementation "com.arello-mobile:moxy-app-compat:$moxyVersion"
-        implementation "com.arello-mobile:moxy-compiler:$moxyVersion"
+        annotationProcessor "com.arello-mobile:moxy-compiler:$moxyVersion"
 
         testImplementation 'junit:junit:4.12'
         androidTestImplementation 'com.android.support.test:runner:1.0.1'
