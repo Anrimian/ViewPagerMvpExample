@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.github.anrimian.viewpagermvpexample.MainActivity">
+    tools:context="com.github.anrimian.viewpagermvpexample.ui.main_screen.MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
