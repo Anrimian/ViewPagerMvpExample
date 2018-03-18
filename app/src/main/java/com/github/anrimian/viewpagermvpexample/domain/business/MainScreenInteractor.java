@@ -11,7 +11,7 @@ import io.reactivex.subjects.BehaviorSubject;
 
 public class MainScreenInteractor {
 
-    private BehaviorSubject<ColorMode> colorModeSubject = BehaviorSubject.createDefault(ColorMode.RED);
+    private BehaviorSubject<ColorMode> colorModeSubject = BehaviorSubject.createDefault(ColorMode.BLUE);
 
     public Observable<ColorMode> getColorModeObservable() {
         return colorModeSubject;

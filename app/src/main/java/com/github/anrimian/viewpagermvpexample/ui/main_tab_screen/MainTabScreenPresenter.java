@@ -1,4 +1,4 @@
-package com.github.anrimian.viewpagermvpexample.ui.main_screen;
+package com.github.anrimian.viewpagermvpexample.ui.main_tab_screen;
 
 import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;
@@ -13,15 +13,15 @@ import io.reactivex.disposables.CompositeDisposable;
  */
 
 @InjectViewState
-public class MainScreenPresenter extends MvpPresenter<MainScreenView> {
+public class MainTabScreenPresenter extends MvpPresenter<MainTabScreenView> {
 
     private MainScreenInteractor mainScreenInteractor;
     private Scheduler uiScheduler;
 
     private CompositeDisposable presenterDisposable = new CompositeDisposable();
 
-    public MainScreenPresenter(MainScreenInteractor mainScreenInteractor,
-                               Scheduler uiScheduler) {
+    public MainTabScreenPresenter(MainScreenInteractor mainScreenInteractor,
+                                  Scheduler uiScheduler) {
         this.mainScreenInteractor = mainScreenInteractor;
         this.uiScheduler = uiScheduler;
     }
@@ -36,10 +36,6 @@ public class MainScreenPresenter extends MvpPresenter<MainScreenView> {
     public void onDestroy() {
         super.onDestroy();
         presenterDisposable.dispose();
-    }
-
-    void onRedColorModeButtonClicked() {
-        mainScreenInteractor.setColorMode(ColorMode.RED);
     }
 
     private void subscribeOnColorModeChanging() {

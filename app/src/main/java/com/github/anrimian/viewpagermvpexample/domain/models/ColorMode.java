@@ -7,5 +7,5 @@ package com.github.anrimian.viewpagermvpexample.domain.models;
 public enum ColorMode {
     RED,
     GREEN,
-    YELLOW
+    BLUE
 }
