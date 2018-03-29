@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 27
     defaultConfig {
         applicationId "com.github.anrimian.viewpagermvpexample"
         minSdkVersion 21
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -24,6 +24,7 @@ android {
 
 ext {
 
+    supportLibraryVersion = "27.1.0"
     rxJavaVersion = "2.1.5"
     rxAndroidVersion = "2.0.1"
     moxyVersion = "1.5.3"
@@ -32,7 +33,8 @@ ext {
 
     dependencies {
         implementation fileTree(dir: 'libs', include: ['*.jar'])
-        implementation 'com.android.support:appcompat-v7:26.1.0'
+        implementation "com.android.support:appcompat-v7:$supportLibraryVersion"
+        implementation "com.android.support:design:$supportLibraryVersion"
         implementation 'com.android.support.constraint:constraint-layout:1.0.2'
 
         implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
