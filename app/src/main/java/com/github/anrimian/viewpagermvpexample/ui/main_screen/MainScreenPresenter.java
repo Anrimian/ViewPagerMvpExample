@@ -2,6 +2,7 @@ package com.github.anrimian.viewpagermvpexample.ui.main_screen;
 
 import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;
+import com.github.anrimian.viewpagermvpexample.di.Components;
 import com.github.anrimian.viewpagermvpexample.domain.business.MainScreenInteractor;
 import com.github.anrimian.viewpagermvpexample.domain.models.ColorMode;
 
@@ -36,6 +37,7 @@ public class MainScreenPresenter extends MvpPresenter<MainScreenView> {
     public void onDestroy() {
         super.onDestroy();
         presenterDisposable.dispose();
+        Components.destroyColorModeComponent();
     }
 
     void onRedColorModeButtonClicked() {

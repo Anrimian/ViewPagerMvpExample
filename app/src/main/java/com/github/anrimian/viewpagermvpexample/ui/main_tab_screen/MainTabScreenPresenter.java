@@ -38,6 +38,10 @@ public class MainTabScreenPresenter extends MvpPresenter<MainTabScreenView> {
         presenterDisposable.dispose();
     }
 
+    void onSwitchToGreenButtonClicked() {
+        mainScreenInteractor.setColorMode(ColorMode.GREEN);
+    }
+
     private void subscribeOnColorModeChanging() {
         presenterDisposable.add(mainScreenInteractor.getColorModeObservable()
                 .observeOn(uiScheduler)

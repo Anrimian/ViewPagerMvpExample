@@ -38,8 +38,8 @@ public class LeftTabScreenPresenter extends MvpPresenter<LeftTabScreenView> {
         presenterDisposable.dispose();
     }
 
-    void onGreenColorModeButtonClicked() {
-        mainScreenInteractor.setColorMode(ColorMode.GREEN);
+    void onRedColorModeButtonClicked() {
+        mainScreenInteractor.setColorMode(ColorMode.RED);
     }
 
     private void subscribeOnColorModeChanging() {

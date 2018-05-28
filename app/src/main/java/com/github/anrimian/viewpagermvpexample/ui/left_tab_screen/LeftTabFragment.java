@@ -6,11 +6,26 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.arellomobile.mvp.MvpAppCompatFragment;
+import com.arellomobile.mvp.presenter.InjectPresenter;
+import com.arellomobile.mvp.presenter.ProvidePresenter;
 import com.github.anrimian.viewpagermvpexample.R;
+import com.github.anrimian.viewpagermvpexample.di.Components;
+import com.github.anrimian.viewpagermvpexample.domain.models.ColorMode;
 
-public class LeftTabFragment extends MvpAppCompatFragment {
+public class LeftTabFragment extends MvpAppCompatFragment implements LeftTabScreenView{
+
+    @InjectPresenter
+    LeftTabScreenPresenter presenter;
+
+    private Button btnSwitchToRed;
+
+    @ProvidePresenter
+    LeftTabScreenPresenter providePresenter() {
+        return Components.getColorModeComponent().leftTabScreenPresenter();
+    }
 
     @Nullable
     @Override
@@ -22,6 +37,12 @@ public class LeftTabFragment extends MvpAppCompatFragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+        btnSwitchToRed = view.findViewById(R.id.btn_switch_to_red);
+        btnSwitchToRed.setOnClickListener(v -> presenter.onRedColorModeButtonClicked());
+    }
+
+    @Override
+    public void showColorMode(ColorMode colorMode) {
+        btnSwitchToRed.setEnabled(colorMode != ColorMode.RED);
     }
 }
